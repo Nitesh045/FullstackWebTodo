@@ -4,7 +4,7 @@
   "description": "todo application",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js -e ejs,css,js"
+    "start": "node app.js"
   },
   "author": "nitesh",
   "license": "ISC",
