@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
+const dotenv= require('dotenv');
+dotenv.config();
+
+
 //const ejs = require('ejs');
 app.use(express.urlencoded({extended:true}))
 const mongoDb=require('./todo.js');
-const { default: mongoose } = require('mongoose');
+const  mongoose  = require('mongoose');
+const port= process.env.PORT ;
 
 app.use(express.json());
 app.set('view engine','ejs');
@@ -55,6 +60,6 @@ app.route('/remove/:id').get(async(req,res)=>{
 
 
 
-app.listen(5000,()=>{
-    console.log('server has started ');
+app.listen(port,()=>{
+    console.log(`server started at ${port}`);
 })
